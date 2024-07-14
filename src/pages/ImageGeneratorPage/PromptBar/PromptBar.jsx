@@ -39,7 +39,7 @@ const PromptBar = ({ theme}) => {
             {/* User Box */}
             <div className='user-box'>
                 <img className='user-avatar' src={userAvatar} alt="Avatar" />
-                <h1 className='hello-user-name' >Hey{userName},</h1>
+                <h1 className='hello-user-name' >Hey {userName},</h1>
             </div>
 
             <div className={`generator-bar-ani w-full ${!theme ? "bg-[#1a1a1adf]" : "bg-[#eaeaeadf]"} rounded-md py-5 mt-2`}>

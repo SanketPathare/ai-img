@@ -3,7 +3,6 @@ import { useState, useEffect, useContext } from 'react';
 
 //Providers
 import { AImageContext } from '../../../providers/AImageContext';
-import { useLanguage } from '../../../providers/LanguageContext';
 
 //Components
 import Image from "../FavComponents/Image"
@@ -15,7 +14,6 @@ import { MdImage } from "react-icons/md";
 const ImagesComponent = () => {
 
   const { favImages, inputText } = useContext(AImageContext);
-  const { language } = useLanguage();
   const [filteredImages, setFilteredImages] = useState([]);
 
   // Filter Favorite Images
@@ -33,7 +31,7 @@ const ImagesComponent = () => {
         ) : (
           <div className='no-content'>
             <MdImage size={80} color='#ccc' />
-            <p className='text-[20px] text-[#595959] mt-2'>{language === "en" ? "Not found favorite images" : "Favori resim bulunamadı"}</p>
+            <p className='text-[20px] text-[#595959] mt-2'>Not found favorite images</p>
           </div>
         )}
     </div>

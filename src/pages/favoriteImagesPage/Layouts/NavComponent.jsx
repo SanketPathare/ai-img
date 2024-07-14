@@ -6,7 +6,6 @@ import React, { useContext } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 //Providers
-import { useLanguage } from '../../../providers/LanguageContext';
 import { AImageContext } from '../../../providers/AImageContext';
 import { useTheme } from '../../../providers/ThemeContext';
 
@@ -18,7 +17,6 @@ import { MdImageSearch } from "react-icons/md";
 
 
 const NavComponent = () => {
-  const { language } = useLanguage();
   const { darkMode } = useTheme();
   const navigate = useNavigate();
 
@@ -33,7 +31,7 @@ const NavComponent = () => {
     setPopup((prevState) => ({
       ...prevState,
       show: true,
-      content: `${language === "en" ? "Are you sure to delete all favorites" : "Bütün favoriler silinmek üzere"}`,
+      content:  "Are you sure to delete all favorites",
       function: DeleteAllImages
     }));
   }
@@ -58,7 +56,7 @@ const NavComponent = () => {
         <button
           onClick={handleGenerateButton}
           className='generate-new-image relative'>
-          <span>{language === "en" ? "Generate Image" : "Resim Oluştur"}</span>
+          <span>Generate Image</span>
           <BsStars className='ml-2 text-[24px]' />
         </button>
       </div>
@@ -67,7 +65,7 @@ const NavComponent = () => {
       <div className='search-bar-box'>
         <input
           onChange={handleInputChange}
-          className={`search-input ${!darkMode ? "bg-[#242424e7] text-[#dcdcdc]" : "bg-[#dddddde7] text-[#222222]"}`} placeholder={`${language === "en" ? "Search in favorites..." : "Favorilerde ara..."}`}></input>
+          className={`search-input ${!darkMode ? "bg-[#242424e7] text-[#dcdcdc]" : "bg-[#dddddde7] text-[#222222]"}`} placeholder= "Search in favorites..."></input>
          <button className={`find-image-button ${!darkMode ? "bg-[#242424e7] text-[#dcdcdc]" : "bg-[#dddddde7] text-[#3f3f3f]"}`}>
           <MdImageSearch />
         </button>
@@ -80,7 +78,7 @@ const NavComponent = () => {
           onClick={handleDeleteAllFavorites}
           className={`delete-all-image ${hasFavImages ? 'active-button' : 'enabled-button'}`}
         >
-          <span>{language === "en" ? "Delete All Images" : "Bütün Resimleri Sil"}</span>
+          <span>Delete All Images</span>
           <MdDeleteSweep className='ml-1 text-[26px]' />
         </button>
       </div>

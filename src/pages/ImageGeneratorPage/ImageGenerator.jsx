@@ -5,17 +5,17 @@ import ImageBar from "./ImageBar/ImageBar.jsx"
 //Style
 import "./ImageGenerator.css";
 
-const ImageGenerator = ({ theme, language }) => {
+const ImageGenerator = ({ theme }) => {
     return (
         <>
             <div className={`image-generator-layout ${!theme ? "text-[white]" : "text-[black]"}`}>
                 {/* Prompt Area */}
                 <div className="prompt-bar">
-                    <PromptBar theme={theme} language={language} />
+                    <PromptBar theme={theme} />
                 </div>
                 {/* Images Area */}
                 <div className="image-bar">
-                    <ImageBar theme={theme} language={language} />
+                    <ImageBar theme={theme}  />
                 </div>
             </div>
         </>

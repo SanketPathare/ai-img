@@ -2,14 +2,13 @@
 import { useState, useEffect } from "react"
 
 //Providers
-import { useLanguage } from "../../../providers/LanguageContext";
 //Component
 import HamiLogo from '../../../components/HamiLogo';
 
 
 const HamiLogoAndInfos = ({ setIsLoginBox }) => {
 
-    const { language } = useLanguage();
+
 
     //Animation States
     const [isHamiLogo, setIsHamiLogo] = useState(false);
@@ -68,17 +67,17 @@ const HamiLogoAndInfos = ({ setIsLoginBox }) => {
                 }
                 {isHamiInfo &&
                     <p className={`hami-login-info`}>
-                        {language === "en" ? "Image Generator" : "Yazı ve Resim Üretici"}
+                       Image Generator
                     </p>
                 }
                 {isHamiInfo2 &&
                     <p className="hami-login-info">
-                        {language === "en" ? "Are you ready for a great AI experience?" : "Harika bir yapay zeka deneyimine hazır mısın?"}
+                    Are you ready for a great AI experience
                     </p>
                 }
                 {isHamiInfo3 &&
                     <p className="hami-login-info">  
-                        {language === "en" ? "Start by choosing a username and avatar" : "Bir kullanıcı adı ve avatar seçerek başla"}
+                    Start by choosing a username and avatar
                     </p>
 
                 }

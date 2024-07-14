@@ -1,5 +1,4 @@
-//Context
-import { useLanguage } from "../../../../providers/LanguageContext.jsx";
+
 import { useTheme } from "../../../../providers/ThemeContext.jsx";
 
 // Generated Images
@@ -13,7 +12,7 @@ import YourFavoriteImageButton from "./YourFavoriteImageButton"
 
 const StockImages = () => {
 
-  const { language } = useLanguage();
+
   const { darkMode } = useTheme();
 
   return (
@@ -23,14 +22,14 @@ const StockImages = () => {
         <div className="stock-img-container">
           <img className="stock-img" src={Image1} alt="" />
           <div className="img-info">
-            {language === "en" ? "A cute cat with big eyes showing its cute paws." : "Sevimli, patilerini gösteren büyük gözleri olan tatlı bir kedi."}
+             A cute cat with big eyes showing its cute paws.
           </div>
         </div>
 
         <div className="stock-img-container">
           <img className="stock-img" src={Image2} alt="" />
           <div className="img-info">
-            {language === "en" ? "A tropical island sunset, a large ship approaching, high details." : "Tropikal bir ada gün batımı, büyük bir gemi yaklaşıyor, yüksek detaylar."}
+           A tropical island sunset, a large ship approaching, high details.
 
           </div>
         </div>
@@ -38,14 +37,14 @@ const StockImages = () => {
         <div className="stock-img-container">
           <img className="stock-img" src={Image3} alt="" />
           <div className="img-info">
-            {language === "en" ? "Black motorcycle passing on a highway, sea in the background, cinematic angle, ultra realistic." : "Bir otobandan geçen siyah renkli motorsiklet, arka plan deniz,  sinematik bir açı , ultra gerçekçi."}
+          Black motorcycle passing on a highway, sea in the background, cinematic angle, ultra realistic.
           </div>
         </div>
         
         <div className="stock-img-container">
           <img className="stock-img" src={Image4} alt="" />
           <div className="img-info">
-            {language === "en" ? "Close-up astronaut looking towards the screen, very charismatic pose, high details." : "Ekrana doğru bakan yakın çekim astronot, çok karizmatik bir poz, yüksek detaylar."}
+            Close-up astronaut looking towards the screen, very charismatic pose, high details.
           </div>
         </div>
       </div>

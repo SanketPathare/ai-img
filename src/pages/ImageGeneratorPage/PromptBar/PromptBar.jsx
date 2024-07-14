@@ -14,7 +14,7 @@ import PromptOptions from "./PromptBarComponents/PromptOptions";
 import GenerateButton from "./PromptBarComponents/GenerateButton";
 
 
-const PromptBar = ({ theme, language }) => {
+const PromptBar = ({ theme}) => {
 
     const [userAvatar, setUserAvatar] = useState('');
     const [userName, setUserName] = useState('');
@@ -39,7 +39,7 @@ const PromptBar = ({ theme, language }) => {
             {/* User Box */}
             <div className='user-box'>
                 <img className='user-avatar' src={userAvatar} alt="Avatar" />
-                <h1 className='hello-user-name' >{language === "en" ? "Hey" : "Selam"} {userName},</h1>
+                <h1 className='hello-user-name' >Hey{userName},</h1>
             </div>
 
             <div className={`generator-bar-ani w-full ${!theme ? "bg-[#1a1a1adf]" : "bg-[#eaeaeadf]"} rounded-md py-5 mt-2`}>
@@ -48,7 +48,7 @@ const PromptBar = ({ theme, language }) => {
                 <div className="prompt-box">
                     <MdOutlineDraw className="info-icons" />
                     <textarea value={prompts} onChange={handleTextAreaPrompts} className={`prompt-input ${!theme ? "bg-[#222222] text-[#d4d4d4]" : "bg-[#dddddd] text-[#212121]"}`}
-                        placeholder={`${language === "en" ? "Write your request, keywords and your imagination here..." : "Buraya isteğinizi, anahtar kelimeleri ve hayal gücünüzü yazın..."}`}>
+                        placeholder= "Write your request, keywords and your imagination here...">
 
                     </textarea>
                 </div>

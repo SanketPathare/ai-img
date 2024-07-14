@@ -4,7 +4,6 @@ import { useNavigate } from 'react-router-dom';
 
 // Providers
 import { useTheme } from '../../providers/ThemeContext';
-import { useLanguage } from '../../providers/LanguageContext';
 import { useUser } from '../../providers/userAccountContext';
 
 // Other Components
@@ -20,7 +19,7 @@ const LoginHomePage = () => {
 
     const navigate = useNavigate();
     const { darkMode } = useTheme();
-    const { language } = useLanguage();
+
     const userNameInputRef = useRef(null);
     const { updateUserAccount } = useUser();
     const [selectedAvatar, setSelectedAvatar] = useState(null);
@@ -74,14 +73,14 @@ const LoginHomePage = () => {
                                     : ' text-white placeholder:text-gray-300 border-gray-300'
                                 }`}
                             type="text"
-                            maxLength={12} placeholder={language === 'en' ? 'Please choose a username' : 'Kullanıcı adı belirleyin'}
+                            maxLength={12} placeholder='Please choose a username'
                         />
                         <AvatarSelectionPage handleAvatarSelect={handleAvatarSelect} selectedAvatar={selectedAvatar} />
 
                         <NextButton handleUserUpdate={handleUserUpdate} userNameInputRef={userNameInputRef} selectedAvatar={selectedAvatar} />
 
                         {showModal && (
-                            <Modal content={language === "en" ? "Please choose a username and avatar" : "Lütfen bir kullanıcı adı ve avatar belirleyin"} />
+                            <Modal content="Please choose a username and avatar" />
                         )}
                     </div>
                 </div>

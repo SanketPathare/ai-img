@@ -3,7 +3,6 @@ import { useState,useContext } from "react";
 
 //Providers
 import { useTheme } from "../../../../providers/ThemeContext";
-import { useLanguage } from "../../../../providers/LanguageContext";
 import { AImageContext } from '../../../../providers/AImageContext'
 
 //Styles
@@ -13,7 +12,6 @@ import { LuPaintbrush2 } from "react-icons/lu";
 const PromptOptions = () => {
 
     const { darkMode } = useTheme();
-    const { language } = useLanguage();
 
     const {setQuality,setStyle} = useContext(AImageContext);
 
@@ -36,9 +34,9 @@ const PromptOptions = () => {
             {/* Image Size Box */}
             <div className="image-size-box">
                 <MdPhotoSizeSelectActual className="info-icons" />
-                <button className={`size-btn ${!darkMode ? "bg-[#222222] text-[#d4d4d4]" : "bg-[#d3d3d3] text-[#212121]"} ${selectedQuality === 'Low' ? 'active' : ''}`} onClick={() => handleSizeButtonClick('Low')}>{language ==="en" ? "Low":"Düşük"}</button>
-                <button className={`size-btn ${!darkMode ? "bg-[#222222] text-[#d4d4d4]" : "bg-[#d3d3d3] text-[#212121]"} ${selectedQuality === 'Medium' ? 'active' : ''}`} onClick={() => handleSizeButtonClick('Medium')}>{language ==="en" ? "Medium":"Orta"}</button>
-                <button className={`size-btn ${!darkMode ? "bg-[#222222] text-[#d4d4d4]" : "bg-[#d3d3d3] text-[#212121]"} ${selectedQuality === 'High' ? 'active' : ''}`} onClick={() => handleSizeButtonClick('High')}>{language ==="en" ? "High":"Yüksek"}</button>
+                <button className={`size-btn ${!darkMode ? "bg-[#222222] text-[#d4d4d4]" : "bg-[#d3d3d3] text-[#212121]"} ${selectedQuality === 'Low' ? 'active' : ''}`} onClick={() => handleSizeButtonClick('Low')}>Low</button>
+                <button className={`size-btn ${!darkMode ? "bg-[#222222] text-[#d4d4d4]" : "bg-[#d3d3d3] text-[#212121]"} ${selectedQuality === 'Medium' ? 'active' : ''}`} onClick={() => handleSizeButtonClick('Medium')}>Medium</button>
+                <button className={`size-btn ${!darkMode ? "bg-[#222222] text-[#d4d4d4]" : "bg-[#d3d3d3] text-[#212121]"} ${selectedQuality === 'High' ? 'active' : ''}`} onClick={() => handleSizeButtonClick('High')}>High</button>
             </div>
 
             {/* hr * */}
@@ -50,13 +48,13 @@ const PromptOptions = () => {
             <div className="image-style-box flex">
                 <LuPaintbrush2 className="info-icons" />
                 <div className="style-buttons">
-                    <button className={`style-btn ${!darkMode ? "bg-[#222222] text-[#d4d4d4]" : "bg-[#d3d3d3] text-[#212121]"} ${selectedStyle === 'Realistic' ? 'active' : ''}`} onClick={() => handleButtonClick('Realistic')}>{language ==="en" ? "Realistic":"Gerçekçi"}</button>
-                    <button className={`style-btn ${!darkMode ? "bg-[#222222] text-[#d4d4d4]" : "bg-[#d3d3d3] text-[#212121]"} ${selectedStyle === 'Cinematic' ? 'active' : ''}`} onClick={() => handleButtonClick('Cinematic')}>{language ==="en" ? "Cinematic":"Sinematik"}</button>
-                    <button className={`style-btn ${!darkMode ? "bg-[#222222] text-[#d4d4d4]" : "bg-[#d3d3d3] text-[#212121]"} ${selectedStyle === 'Origami' ? 'active' : ''}`} onClick={() => handleButtonClick('Origami')}>{language ==="en" ? "Origami":"Origami"}</button>
-                    <button className={`style-btn ${!darkMode ? "bg-[#222222] text-[#d4d4d4]" : "bg-[#d3d3d3] text-[#212121]"} ${selectedStyle === 'Animation' ? 'active' : ''}`} onClick={() => handleButtonClick('Animation')}>{language ==="en" ? "Animation":"Animasyon"}</button>
-                    <button className={`style-btn ${!darkMode ? "bg-[#222222] text-[#d4d4d4]" : "bg-[#d3d3d3] text-[#212121]"} ${selectedStyle === 'Cartoon' ? 'active' : ''}`} onClick={() => handleButtonClick('Cartoon')}>{language ==="en" ? "Cartoon":"Karikatür"}</button>
-                    <button className={`style-btn ${!darkMode ? "bg-[#222222] text-[#d4d4d4]" : "bg-[#d3d3d3] text-[#212121]"} ${selectedStyle === 'Pixel Art' ? 'active' : ''}`} onClick={() => handleButtonClick('Pixel Art')}>{language ==="en" ? "Pixel Art":"Piksel"}</button>
-                    <button className={`style-btn ${!darkMode ? "bg-[#222222] text-[#d4d4d4]" : "bg-[#d3d3d3] text-[#212121]"} ${selectedStyle === '3D' ? 'active' : ''}`} onClick={() => handleButtonClick('3D')}>{language==="en" ? "3D":"3B"}</button>
+                    <button className={`style-btn ${!darkMode ? "bg-[#222222] text-[#d4d4d4]" : "bg-[#d3d3d3] text-[#212121]"} ${selectedStyle === 'Realistic' ? 'active' : ''}`} onClick={() => handleButtonClick('Realistic')}>Realistic</button>
+                    <button className={`style-btn ${!darkMode ? "bg-[#222222] text-[#d4d4d4]" : "bg-[#d3d3d3] text-[#212121]"} ${selectedStyle === 'Cinematic' ? 'active' : ''}`} onClick={() => handleButtonClick('Cinematic')}>Cinematic</button>
+                    <button className={`style-btn ${!darkMode ? "bg-[#222222] text-[#d4d4d4]" : "bg-[#d3d3d3] text-[#212121]"} ${selectedStyle === 'Origami' ? 'active' : ''}`} onClick={() => handleButtonClick('Origami')}>Origami</button>
+                    <button className={`style-btn ${!darkMode ? "bg-[#222222] text-[#d4d4d4]" : "bg-[#d3d3d3] text-[#212121]"} ${selectedStyle === 'Animation' ? 'active' : ''}`} onClick={() => handleButtonClick('Animation')}>Animation</button>
+                    <button className={`style-btn ${!darkMode ? "bg-[#222222] text-[#d4d4d4]" : "bg-[#d3d3d3] text-[#212121]"} ${selectedStyle === 'Cartoon' ? 'active' : ''}`} onClick={() => handleButtonClick('Cartoon')}>Cartoon</button>
+                    <button className={`style-btn ${!darkMode ? "bg-[#222222] text-[#d4d4d4]" : "bg-[#d3d3d3] text-[#212121]"} ${selectedStyle === 'Pixel Art' ? 'active' : ''}`} onClick={() => handleButtonClick('Pixel Art')}>Pixel Art</button>
+                    <button className={`style-btn ${!darkMode ? "bg-[#222222] text-[#d4d4d4]" : "bg-[#d3d3d3] text-[#212121]"} ${selectedStyle === '3D' ? 'active' : ''}`} onClick={() => handleButtonClick('3D')}>3D</button>
                 </div>
             </div>
         </>

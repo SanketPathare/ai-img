@@ -1,6 +1,6 @@
 //Providers
 import { useContext } from 'react';
-import { useLanguage } from '../../../../providers/LanguageContext'
+
 import { AImageContext } from '../../../../providers/AImageContext'
 import { useModal } from '../../../../providers/AlertModalContext';
 
@@ -11,7 +11,6 @@ import { RiImageEditFill } from "react-icons/ri";
 
 const GenerateButton = () => {
 
-    const { language } = useLanguage()
     const { toggleModal } = useModal();
     const { onSentPrompts, prompts, loading, isSaved, setIsSaved } = useContext(AImageContext);
 
@@ -22,7 +21,7 @@ const GenerateButton = () => {
             setIsSaved(false);
            
         } else {
-            toggleModal(true, `${language === "en" ? "Please input a prompt." : "Lütfen bir istemde bulunun"}`);
+            toggleModal(true,"Please input a prompt.");
         }
     }
 
@@ -34,7 +33,7 @@ const GenerateButton = () => {
                     {!loading
                         ? <>
                             <span className={`mx-3 text-[#ececec]`}>
-                                {language === "en" ? "Generate Image" : "Resim Oluştur"}
+                               Generate Image
                             </span>
 
                             <span className=" mr-3">
@@ -43,7 +42,7 @@ const GenerateButton = () => {
                         </>
                         : <>
                             <span className={`generating-ani mx-3 text-[#ececec]`}>
-                                {language === "en" ? "Generating..." : "Oluşturuluyor..."}
+                                Generating...
                             </span>
                             <span className="generating-ani mr-3">
                                 <RiImageEditFill className="text-[24px]" />

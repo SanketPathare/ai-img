@@ -9,7 +9,7 @@ import Footer from "../../components/Footer/Footer.jsx";
 
 // Providers
 import { useTheme } from '../../providers/ThemeContext'
-import { useLanguage } from '../../providers/LanguageContext'
+
 import AlertModal from "../../components/ModalComponent/Modal.jsx"
 import { useModal } from "../../providers/AlertModalContext.jsx";
 
@@ -19,7 +19,7 @@ import "./ImageGenerator.css";
 const ImageGeneratorPage = () => {
 
   const { darkMode } = useTheme();
-  const { language } = useLanguage();
+  
   const { showModal } = useModal();
 
   const navigate = useNavigate();
@@ -36,7 +36,7 @@ const ImageGeneratorPage = () => {
   return (
     <div className={`image-generator-box  w-full  smooth-transitions ${darkMode ? "bg-white " : "bg-[#161616]"}`}>
       <Header />
-      <ImageGenerator theme={darkMode} language={language} />
+      <ImageGenerator theme={darkMode}  />
       <Footer theme={darkMode} />
       {showModal.show ? <AlertModal content={showModal.content} /> : null}
     </div>

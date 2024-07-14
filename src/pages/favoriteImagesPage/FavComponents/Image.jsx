@@ -3,7 +3,6 @@ import { useContext, useState } from "react";
 
 //Providers
 import { AImageContext } from "../../../providers/AImageContext";
-import { useLanguage } from "../../../providers/LanguageContext";
 
 //Styles - Icons
 import { MdDelete } from "react-icons/md";
@@ -15,7 +14,6 @@ import SelectedImagesInfos from "./SelectedImagesInfos";
 
 const Image = ({ image, prompts, itemId }) => {
 
-  const { language } = useLanguage();
   const [modal, setModal] = useState(false);
 
 
@@ -33,7 +31,7 @@ const Image = ({ image, prompts, itemId }) => {
     setPopup((prevState) => ({
       ...prevState,
       show: true,
-      content: `${language === "en" ? "Are you sure to delete this image" : "Bu resmi silmek üzeresin"}`,
+      content:  "Are you sure to delete this image",
       function: deleteThisImage
     }));
   };

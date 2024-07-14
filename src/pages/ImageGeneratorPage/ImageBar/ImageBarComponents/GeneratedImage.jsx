@@ -4,12 +4,10 @@ import { useNavigate } from 'react-router-dom';
 
 //Providers
 import { useTheme } from '../../../../providers/ThemeContext';
-import { useLanguage } from '../../../../providers/LanguageContext';
 import { AImageContext } from '../../../../providers/AImageContext';
 
 // Style - Icons
 import PreLoader from '../../../../components/PreLoader';
-import HamiLogo from "../../../../assets/HamiLogo.png";
 import errorImage from "../../../../assets/ErrorImage/errorImage.png";
 import { MdOutlineDraw } from "react-icons/md";
 import { FiDownload } from "react-icons/fi";
@@ -24,7 +22,6 @@ const GeneratedImage = () => {
   //Hooks-Providers
   const navigate = useNavigate();
   const { darkMode } = useTheme();
-  const { language } = useLanguage();
   const { imageObjectURL, loading, recentPrompt, DownloadNewImage, error, handleSaveInFavorite, isSaved, setIsSaved, setShowResult } = useContext(AImageContext);
 
   //States
@@ -96,11 +93,11 @@ const GeneratedImage = () => {
           <button onClick={handleDownloadImage} className='download-btn'>
             {!isDownload ?
               <>
-                <span className='mr-3'>{language === "en" ? "Download Image" : "Resmi İndir"}</span>
+                <span className='mr-3'>Download Image</span>
                 <span className='text-[23px]'><FiDownload /></span>
               </>
               : <>
-                <span className='image-down-ani mr-3'>{language === "en" ? "Downloaded" : "Resmi İndirildi"}</span>
+                <span className='image-down-ani mr-3'>  Downloaded</span>
                 <span className='image-down-ani text-[23px]'><MdDownloadDone /></span>
               </>
             }
@@ -110,13 +107,13 @@ const GeneratedImage = () => {
           <button onClick={handleSaveButton} className='save-btn'>
             {!isSaved
               ? <>
-                <span className='mr-3'>{language === "en" ? "Save In Favorites" : "Favorilere Kaydet"}</span>
+                <span className='mr-3'>Save In Favorites</span>
                 <span className='text-[23px]'><LuImagePlus /></span>
 
               </>
               :
               <>
-                <span className='saved-span mr-3'>{language === "en" ? "Saved" : "Favorilere Eklendi"}</span>
+                <span className='saved-span mr-3'>Saved</span>
                 <span className='saved-span text-[23px]'><BsFillBookmarkCheckFill /></span>
               </>
             }
@@ -142,12 +139,12 @@ const GeneratedImage = () => {
           <div className='flex justify-center'>
           </div>
           {error ? <>
-            <p>{language === "en" ? "An error has occurred. Please try again." : "Bir hata meydana geldi. Lütfen tekrar deneyin."}</p>
+            <p>An error has occurred. Please try again. </p>
 
           </>
             :
             <>
-              <p>{language === "en" ? "Your image is being prepared. The processing time may vary depending on system load." : "Resminiz hazırlanıyor, bu işlemin süresi sistemin yoğunluğuna göre değişiklik gösterebilir."}</p>
+              <p>Your image is being prepared. The processing time may vary depending on system load.</p>
             </>}
         </div>
       }

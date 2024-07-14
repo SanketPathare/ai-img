@@ -68,7 +68,7 @@ const HamiLogoAndInfos = ({ setIsLoginBox }) => {
                 }
                 {isHamiInfo &&
                     <p className={`hami-login-info`}>
-                        {language === "en" ? "Text and Image Generator" : "Yazı ve Resim Üretici"}
+                        {language === "en" ? "Image Generator" : "Yazı ve Resim Üretici"}
                     </p>
                 }
                 {isHamiInfo2 &&

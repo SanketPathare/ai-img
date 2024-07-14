@@ -14,7 +14,7 @@ const ImageGeneratorMenu = () => {
     
 
     return (
-        <button id="menuButtonImageGenerator" className={`menu-button-design relative ${darkMode ? 'border-[#374151]' : "border-[#f5f5f4]"}`}>
+        <button id="menuButtonImageGenerator" className={`menu-button-design relative ${darkMode ? 'border-[#374151]': "border-[#f5f5f4]"}`}>
             <h1>
                 Image Generator
             </h1>

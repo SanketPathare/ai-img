@@ -8,8 +8,8 @@ const style = {
 
 const HamiLogo = ({}) => {
   return (
-    <h1 className="text-6xl sm:text-6xl md:text-8xl lg:text-8xl xl:text-8xl" style={style.gradientText}>
-      AI
+    <h1 className="text-4xl sm:text-6xl md:text-5xl lg:text-6xl xl:text-6xl text-center " style={style.gradientText}>
+     Course Studio Image Generation
     </h1>
   );
 };
